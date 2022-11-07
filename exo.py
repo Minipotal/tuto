@@ -30,3 +30,13 @@ def retournerSixPlusX(x):
 retournerSixPlusX(9)
 print ("Hello World !")
 #FIN
+
+#Exercices a faire
+
+#add(x,y)
+#sub(x,y)
+#multiply(x,y)
+#divide(x,y)
+#modulo(x,y)
+#SalaireNet(Brut, coefficient)
+#SalaireParSeconde(salaire horaire, heure par jour ouvré, nb jours ouvré par an)
