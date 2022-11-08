@@ -33,26 +33,30 @@ print ("Hello World !")
 
 #Exercices a faire
 
+#ajouter les valeurs
+x=float(input("Entrez un nombre X : "))
+y=float(input("Entrez un nombre Y : "))
+
 #add(x,y)
 def additionnerXplusY(x,y):
-    return(x+y)
+    print(x+y)
 #sub(x,y)
 def soustraireXavecY(x,y):
-    return(x-y)
+    print(x-y)
 #multiply(x,y)
 def multiplierXparY(x,y):
-    return(x*y)
+    print(x*y)
 #divide(x,y)
 def diviserXparY(x,y):
-    return(x/y)
+    print(x/y)
 #modulo(x,y)
 def modulerXparY(x,y):
-    return(x%y)
+    print(x%y)
 #SalaireNet(Brut, coefficient)
 def salaireNet(SalaireBrut, Coefficient):
-    return(SalaireBrut*Coefficient)
+    print(SalaireBrut*Coefficient)
 #SalaireParSeconde(salaire horaire, heure par jour ouvré, nb jours ouvré par an)
 def salaireParSeconde(salaireHoraire, HeureOuvre, joursOuvres):
     salaireAnnuel=salaireHoraire*HeureOuvre*joursOuvres
     tempsAnnuel=31536000
-    return(salaireAnnuel/tempsAnnuel)
+    print(salaireAnnuel/tempsAnnuel)
