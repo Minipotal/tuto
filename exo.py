@@ -91,3 +91,11 @@ def calculBrutEnNet(salaireBrut, isPublic):
     return salaireNet
 
 
+prenom = "Alexandre"
+nom = "Delaistre"
+identite = nom + prenom # retourne "DelaistreAlexandre"
+
+identite + ' ' + prenom # retourne "Delaistre Alexandre"
+
+intergerValue = 342 #Retourne 342
+stringIntegerValue = str(342)# retourne "342"

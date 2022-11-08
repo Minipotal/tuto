@@ -29,3 +29,18 @@ else:
 compteur = 0
 letter=" "
 # Fin
+
+
+#Exercice 1
+#Faire une fonction qui concatene 2 chaines de caractères, en les séparant par une virgule
+
+#Exercice 2
+#Faire une fonction qui itere sur tous les index d'un tableau renvoyant une chaine de caractère
+#Avec l'ensemble des occurences d'un chiffre e.g. :
+#Pour tableau = [0,1,1,1,0,1,1,0,1]
+#La fonction(tableau, 0) doit renvoyer "0,4,7", n'hésitez pas à implémenter la première fonction
+
+#Exercice 3
+#Renvoyer / afficher un message
+msg = str(input("Entrez votre lettre : "))
+print (msg)
