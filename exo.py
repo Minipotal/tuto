@@ -34,9 +34,25 @@ print ("Hello World !")
 #Exercices a faire
 
 #add(x,y)
+def additionnerXplusY(x,y):
+    return(x+y)
 #sub(x,y)
+def soustraireXavecY(x,y):
+    return(x-y)
 #multiply(x,y)
+def multiplierXparY(x,y):
+    return(x*y)
 #divide(x,y)
+def diviserXparY(x,y):
+    return(x/y)
 #modulo(x,y)
+def modulerXparY(x,y):
+    return(x%y)
 #SalaireNet(Brut, coefficient)
+def salaireNet(SalaireBrut, Coefficient):
+    return(SalaireBrut*Coefficient)
 #SalaireParSeconde(salaire horaire, heure par jour ouvré, nb jours ouvré par an)
+def salaireParSeconde(salaireHoraire, HeureOuvre, joursOuvres):
+    salaireAnnuel=salaireHoraire*HeureOuvre*joursOuvres
+    tempsAnnuel=31536000
+    return(salaireAnnuel/tempsAnnuel)
