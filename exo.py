@@ -68,25 +68,26 @@ def salaireParSeconde(salaireHoraire, HeureOuvre, joursOuvres):
     return(salaireAnnuel/tempsAnnuel)
     
 
-
 #Définir une fonction withdrawFees qui retire un pourcentage a un totoal en fonction d'un total et d'un pourcentage
-    def withdrawFees(total, percent):
+def withdrawFees(total, percent):
     #definir fees en fonction d'un total et d'un pourcentage
-        fees = total * (percent / 100)
+    fees = total * (percent / 100)
      #soustraire fees au total
-        result = total - fees
+    result = total - fees
      #retourner la valeur obtenue
-        return result
+    return result
 
     #Definir une fonction qui retourne le salaire net en fonction du salaire brut (float) et du secteur d'activité (isPublic > boolean)
-    def calculBrutEnNet(salaireBrut, isPublic):
-        #Si je suis de la fonction publique
-        if isPublic:
-            #Alors je soustrais 15% de mon salaire brut
-            salaireNet = withdrawFees(salaireBrut,15)
-        #Sinon je suis un travailleur du secteur privé
-        else:
-            #Alors je soustrais 23% a mon salaire brut
-            salaireNet = withdrawFees(salaireBrut,23)
-        #retourner salaireNet
-        return salaireNet
+def calculBrutEnNet(salaireBrut, isPublic):
+    #Si je suis de la fonction publique
+    if isPublic:
+        #Alors je soustrais 15% de mon salaire brut
+        salaireNet = withdrawFees(salaireBrut,15)
+    #Sinon je suis un travailleur du secteur privé
+    else:
+        #Alors je soustrais 23% a mon salaire brut
+        salaireNet = withdrawFees(salaireBrut,23)
+    #retourner salaireNet
+    return salaireNet
+
+
