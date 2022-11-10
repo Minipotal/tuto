@@ -14,10 +14,29 @@ def fibonacci(n):
 #definir combien de passage
 n = int(input("Entrez le nombre de termes:"))
 #Afficher la suite de fibonacci
-print("Suite de Fibonacci en utilisant la recursion :")
+def suite(strA,strB):
+    #on s'assure que strA est bien un string
+    stringifiedA = str(strA)
+    #on s'assure que strB est bien un string
+    stringifiedb = str(strB)
+    #Retourne strA + ',' + strB
+    return strA + ", " + strB
+
+firstTurn = "True"
+
 #Definir la boucle recursive
 for i in range(n):
-    #Calculer la fonction a l'instant i
-    print(fibonacci(i))
+    if firstTurn == "True":
+        chaineRetour = 'Suite de Fibonacci : 0'
+        firstTurn = "False"
+    else:
+        etape =str(fibonacci(i))
+        chaineRetour = suite(chaineRetour, etape)
+    
+    #print(fibonacci(i))
+if(n <= 1):
+    print("Choisissez au minimum 1")
+else:
+    print(chaineRetour)
     
 #Fin
