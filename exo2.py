@@ -1,4 +1,3 @@
-"""
 #def input():
     # Exercice
     # Faire un mini jeu qui affiche un message lorsque input envoie le bon caractère
@@ -11,7 +10,6 @@
 #Definir une lettre aleatoire
 import random , string
 letter = random.choice(string.ascii_lowercase)
-
 
 # Initialiser un compteur
 compteur = 0
@@ -30,7 +28,7 @@ else:
 compteur = 0
 letter=" "
 # Fin
-"""
+
 
 #Exercice 1
 #Faire une fonction qui concatene 2 chaines de caractères, en les séparant par une virgule
@@ -105,20 +103,3 @@ msg = str(input("Entrez votre message : "))
 print (msg)
 
 #Fin
-
-
-# Programme pour générer la suite de Fibonacci en utilisant la récursivité
-def fibonacci(n):
-    #Si n inferieur a 1, pas de suite possible
-    if(n <= 1):
-        #Retourner n
-        return n
-    #Sinon calculer la suite de fibonacci
-    else:
-        return (fibonacci(n-1) + fibonacci(n-2))
-#definir combien de passage
-n = int(input("Entrez le nombre de termes:"))
-#Afficher la suite de fibonacci
-print("Suite de Fibonacci en utilisant la recursion :")
-for i in range(n):
-    print(fibonacci(i))
