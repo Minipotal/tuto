@@ -28,7 +28,6 @@
             #Et proposer de choisir a nouveau
 
 #Definir l'execution du jeu
-    #Comparer le retour des variables valeurJoueur et pfc
         #Si valeurJoueur vaut "Pierre" et pfc vaut "Pierre"
             #Alors afficher "Egalite"
         #Sinon Si valeurJoueur vaut "Pierre" et pfc vaut "Feuille"
@@ -49,13 +48,11 @@
             #Alors afficher "Egalite"
 
 #Definir une fonction pour relancer le jeu
-    #Demander si le joueur veut continuer
-        #Si le joueur veut continuer
+    #Assigner a la variable continuer le retour de l'execution de la fonction input("Voulez-vous continuer ? (oui/non) ")
+        #Si continuer vaut "oui"
             #Alors vider la valeur de valeurJoueur
             #Et relancer le programme
-        #Sinon arreter le programme    
+        #Sinon si continuer vaut "non"
+            #Alors arreter le programme    
 
 #Fin
-
-
-#Ajouter un score ? Systeme de BO ?
