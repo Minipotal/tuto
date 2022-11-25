@@ -1,134 +1,158 @@
 #START
  
-import random
+from random import *
 
 print("Bienvenue au morpion")
 print("----------------------")
 
-possibleNumbers = [1,2,3,4,5,6,7,8,9]
-gameBoard = [[1,2,3], [4,5,6], [7,8,9]]
-rows = 3
-cols = 3
+nombresJouables = [1,2,3,4,5,6,7,8,9]
+tab = [[' ',' ',' '], [' ',' ',' '], [' ',' ',' ']]
+nbl = 3
+nbc = 3
 
-def printGameBoard():
-  for x in range(rows):
+def printTab():
+  for x in range(nbl):
     print("\n+---+---+---+")
     print("|", end="")
-    for y in range(cols):
-      print("", gameBoard[x][y], end=" |")
+    for y in range(nbc):
+      print("", tab[x][y], end=" |")
   print("\n+---+---+---+")
 
 def modifyArray(num, turn):
   num -= 1
   if(num == 0):
-    gameBoard[0][0] = turn
+    tab[0][0] = turn
   elif(num == 1):
-    gameBoard[0][1] = turn
+    tab[0][1] = turn
   elif(num == 2):
-    gameBoard[0][2] = turn
+    tab[0][2] = turn
   elif(num == 3):
-    gameBoard[1][0] = turn
+    tab[1][0] = turn
   elif(num == 4):
-    gameBoard[1][1] = turn
+    tab[1][1] = turn
   elif(num == 5):
-    gameBoard[1][2] = turn
+    tab[1][2] = turn
   elif(num == 6):
-    gameBoard[2][0] = turn
+    tab[2][0] = turn
   elif(num == 7):
-    gameBoard[2][1] = turn
+    tab[2][1] = turn
   elif(num == 8):
-    gameBoard[2][2] = turn
+    tab[2][2] = turn
 
-### Define function to check for a winner
-def checkForWinner(gameBoard):
+### Definir la fonction pour check qui a gagné
+def checkerVainqueur(tab):
   ### X axis
-  if(gameBoard[0][0] == 'X' and gameBoard[0][1] == 'X' and gameBoard[0][2] == 'X'):
+  if(tab[0][0] == 'X' and tab[0][1] == 'X' and tab[0][2] == 'X'):
     print("X a gagné!")
     return "X"
-  elif(gameBoard[0][0] == 'O' and gameBoard[0][1] == 'O' and gameBoard[0][2] == 'O'):
+  elif(tab[0][0] == 'O' and tab[0][1] == 'O' and tab[0][2] == 'O'):
     print("O a gagné!")
     return "O"
-  elif(gameBoard[1][0] == 'X' and gameBoard[1][1] == 'X' and gameBoard[1][2] == 'X'):
+  elif(tab[1][0] == 'X' and tab[1][1] == 'X' and tab[1][2] == 'X'):
     print("X a gagné!")
     return "X"
-  elif(gameBoard[1][0] == 'O' and gameBoard[1][1] == 'O' and gameBoard[1][2] == 'O'):
+  elif(tab[1][0] == 'O' and tab[1][1] == 'O' and tab[1][2] == 'O'):
     print("O a gagné!")
     return "O"
-  elif(gameBoard[2][0] == 'X' and gameBoard[2][1] == 'X' and gameBoard[2][2] == 'X'):
+  elif(tab[2][0] == 'X' and tab[2][1] == 'X' and tab[2][2] == 'X'):
     print("X a gagné!")
     return "X"
-  elif(gameBoard[2][0] == 'O' and gameBoard[2][1] == 'O' and gameBoard[2][2] == 'O'):
+  elif(tab[2][0] == 'O' and tab[2][1] == 'O' and tab[2][2] == 'O'):
     print("O a gagné!")
     return "O"
   ### Y axis
-  if(gameBoard[0][0] == 'X' and gameBoard[1][0] == 'X' and gameBoard[2][0] == 'X'):
+  if(tab[0][0] == 'X' and tab[1][0] == 'X' and tab[2][0] == 'X'):
     print("X a gagné!")
     return "X"
-  elif(gameBoard[0][0] == 'O' and gameBoard[1][0] == 'O' and gameBoard[2][0] == 'O'):
+  elif(tab[0][0] == 'O' and tab[1][0] == 'O' and tab[2][0] == 'O'):
     print("O a gagné!")
     return "O"
-  elif(gameBoard[0][1] == 'X' and gameBoard[1][1] == 'X' and gameBoard[2][1] == 'X'):
+  elif(tab[0][1] == 'X' and tab[1][1] == 'X' and tab[2][1] == 'X'):
     print("X a gagné!")
     return "X"
-  elif(gameBoard[0][1] == 'O' and gameBoard[1][1] == 'O' and gameBoard[2][1] == 'O'):
+  elif(tab[0][1] == 'O' and tab[1][1] == 'O' and tab[2][1] == 'O'):
     print("O a gagné!")
     return "O"
-  elif(gameBoard[0][2] == 'X' and gameBoard[1][2] == 'X' and gameBoard[2][2] == 'X'):
+  elif(tab[0][2] == 'X' and tab[1][2] == 'X' and tab[2][2] == 'X'):
     print("X a gagné!")
     return "X"
-  elif(gameBoard[0][2] == 'O' and gameBoard[1][2] == 'O' and gameBoard[2][2] == 'O'):
+  elif(tab[0][2] == 'O' and tab[1][2] == 'O' and tab[2][2] == 'O'):
     print("O a gagné!")
     return "O"
-  ### Cross wins
-  elif(gameBoard[0][0] == 'X' and gameBoard[1][1] == 'X' and gameBoard[2][2] == 'X'):
+  ### Croix gagne
+  elif(tab[0][0] == 'X' and tab[1][1] == 'X' and tab[2][2] == 'X'):
     print("X a gagné!")
     return "X"
-  elif(gameBoard[0][0] == 'O' and gameBoard[1][1] == 'O' and gameBoard[2][2] == 'O'):
+  elif(tab[0][0] == 'O' and tab[1][1] == 'O' and tab[2][2] == 'O'):
     print("O a gagné!")  
     return "O"
-  elif(gameBoard[0][2] == 'X' and gameBoard[1][1] == 'X' and gameBoard[2][0] == 'X'):
+  elif(tab[0][2] == 'X' and tab[1][1] == 'X' and tab[2][0] == 'X'):
     print("X a gagné!")  
     return "X"
-  elif(gameBoard[0][2] == 'O' and gameBoard[1][1] == 'O' and gameBoard[2][0] == 'O'):
+  elif(tab[0][2] == 'O' and tab[1][1] == 'O' and tab[2][0] == 'O'):
     print("O a gagné!") 
     return "O" 
   else:
     return "N"
 
-leaveLoop = False
-turnCounter = 0
 
-while(leaveLoop == False):
-  ### It's the player turn
-  if(turnCounter % 2 == 0):
-    printGameBoard()
-    numberPicked = int(input("\nChoisissez un nombre [1-9]: "))
-    if(numberPicked in possibleNumbers):
-        if(numberPicked >= 1 or numberPicked <= 9 ):
-            possibleNumbers.remove(numberPicked)
-            modifyArray(numberPicked, 'X')
-            turnCounter += 1
-        else:
-            print("Caractère invalide. Essayez à nouveau.")
-            break
+"""Tentative d'Ia
+
+def position(i,p):
+  if gameBoard [i][p] == 'X':
+    return 1
+  elif gameBoard [i][p] == 'O':
+    return -2
+  else: return 0 
+
+
+def ordinateur():
+  tab = [0*8]
+  tab [0] = position(0,0) + position(0,1) + position(0,2)
+  tab [1] = position(1,0) + position(1,1) + position(1,2)
+  tab [2] = position(2,0) + position(2,1) + position(2,2)
+  tab [3] = position(0,0) + position(1,0) + position(2,0)
+  tab [4] = position(0,1) + position(1,1) + position(2,1)
+  tab [5] = position(0,2) + position(1,2) + position(2,2)
+  tab [6] = position(0,0) + position(1,1) + position(2,2)
+  tab [7] = position(2,0) + position(1,1) + position(0,2)
+
+  mini = 0
+
+  for i in range(8):
+    val = tab[i]
+    if ((val < 0) and (abs(val)%2 == 0) and (val < tab[mini])):
+      mini = i
+"""
+
+
+boucleJeu = False
+compteurTour = 0
+
+while(boucleJeu == False):
+  ### C'est le tour du joueur
+  if(compteurTour % 2 == 0):
+    printTab()
+    nombreChoisi = int(input("\nChoisissez un nombre [1-9]: "))
+    if(nombreChoisi >= 1 or nombreChoisi <= 9):
+      modifyArray(nombreChoisi, 'X')
+      nombresJouables.remove(nombreChoisi)
     else:
-        if(numberPicked=='X' or numberPicked=='O'):
-            print("Caractère invalide. Essayez à nouveau.")
-        
-
-  ### It's the computer's turn
+      print("Caractère invalide. Essayez à nouveau.")
+    compteurTour += 1
+  ###L'ordinateur
   else:
     while(True):
-        cpuChoice = random.choice(possibleNumbers)
-        print("\nChoix du cpu: ", cpuChoice)
-        if(cpuChoice in possibleNumbers):
-            modifyArray(cpuChoice, 'O')
-            possibleNumbers.remove(cpuChoice)
-            turnCounter += 1
-            break
+      cpuChoix = choice(nombresJouables)
+      print("\nChoix du cpu: ", cpuChoix)
+      if(cpuChoix in nombresJouables):
+        modifyArray(cpuChoix, 'O')
+        nombresJouables.remove(cpuChoix)
+        compteurTour += 1
+        break
   
-  winner = checkForWinner(gameBoard)
+  winner = checkerVainqueur(tab)
   if(winner != "N"):
-    print("\nLa partie est finie! Merci d'avoir joué :)")
+    print("\nLa partie est finie! Merci d'avoir joué :)\n")
     break
 #END
